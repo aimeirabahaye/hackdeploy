@@ -25,7 +25,7 @@ SECRET_KEY = '(381&@i7c=&-3x6(_q^70@w+33*5=g=hmg@13vuz%basd2v=z2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "10.200.26.125","10.200.26.0", "10.200.2.231", "10.200.24.125"]
+ALLOWED_HOSTS = ["hackatown2020.herokuapp.com/","localhost", "10.200.26.125","10.200.26.0", "10.200.2.231", "10.200.24.125"]
 
 
 # Application definition
