@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for message in messages %}
+<div class="inbox-grid-container">
+    <div onclick="location.href='http://10.200.26.0:8000/worker-profile/{{ message.worker.id }}';" class="inbox-grid-item-img">
+        <img class="worker-profile-image-inbox" src="{{ message.worker.profile_image }}">
+    </div>
+    <div class="inbox-grid-item-info">{{message.worker.first_name}} {{message.worker.last_name}} wants to complete the task 
+        <a href="http://10.200.26.0:8000/show-task/{{message.task_id}}" class="task-name">{{message.task.taskName}}</a>
+        for you!
+        <div class="inbox-button">
+            <button class="button-confirm">Confirm</button>
+            <button class="button-cancel">Cancel Task</button>
+        </div>
+    </div>
+    <div class="inbox-grid-item-name-rating">
+        {{message.worker.rating}} <span class="fa fa-star checked"></span>
+    </div>
+
+</div>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,76 @@
+.inbox-grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*grid-row-gap: 12px;*/
+    height: 150px;
+}
+
+.worker-profile-image-inbox{
+    display: inline-block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    width: 85px;
+    height: 85px;
+    padding: 10px;
+}
+
+.inbox-grid-item-info{
+    grid-row: 1 / 3;
+    grid-column: 2;
+    background-color: rgba(255, 255, 255);
+    padding: 15px;
+    color: rgb(48, 48, 48);
+    font-size: 15px;
+
+}
+
+.inbox-grid-item-img{
+    background-color: rgba(255, 255, 255);
+}
+
+.inbox-grid-item-name-rating{
+    background-color: rgba(255, 255, 255);
+    color: rgb(121, 121, 121);
+    font-weight: 600;
+    font-size: 13;
+}
+
+.inbox-button{
+    padding-top: 25px;
+}
+
+.button-confirm{
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.button-cancel{
+    background-color: rgb(175, 76, 76); /* Green */
+  border: none;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.task-name{
+    display: inline-block;
+    font-weight:700;
+    color: rgb(73, 73, 73);
+}

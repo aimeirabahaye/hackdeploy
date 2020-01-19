@@ -1,0 +1,44 @@
+.categories{
+    text-align: center;
+}
+
+.categories-list{
+    display: inline-block;
+    padding: 10px;
+    width: 90%;
+}
+
+
+#categories-header{
+    font-size: 20px;
+    padding: 15px;
+}
+
+h5{
+    font-size: 20px;
+    
+}
+
+.searchbar{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.categories a {
+    color:#2e856e;
+    text-decoration: none;
+}

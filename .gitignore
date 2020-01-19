@@ -1,0 +1,6 @@
+
+*.pyc
+
+.vs/
+
+src/project/lifetasks/__pycache__/

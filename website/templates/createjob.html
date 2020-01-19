@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Pending Tasks</h1>
+<div class="add-task-container">
+    <div class="add-task-button" onclick="toggleVisibility('add-task-modal')">+ Add a task</div>
+</div>
+
+<div class="task-list-wrapper">
+    {% for task in tasks %}
+    <div class="task-list-content-item" onclick="toggleVisibility('{{task.taskName}}')">
+        <div class="task-list-content-item-name">{{task.taskName}}</div>
+        <div class="task-list-content-arrow">></div>
+    </div>
+    
+    <div id='{{task.taskName}}' class="modal hidden">
+        <div class="modal-wrapper">
+            <div style="padding: 20px;">
+                <div class="task-section-header">
+                    <h2 class="arrow" onclick="toggleVisibility('{{task.taskName}}')">
+                        < </h2> <h2 class="title">{{task.taskName}}
+                    </h2>
+                    </h2>
+                    <div class="task-info-section">
+                        <label class="task-info-section-title">Status</label>
+                        <div class="description-text">Incomplete</div>
+                    </div>
+                    <div class="task-info-section">
+                        <label>Description</label>
+                        <div class="description-text">{{task.description}}</div>
+                    </div>
+                    <div class="task-info-section">
+                        <label>Address</label>
+                        <div class="description-text">Montreal, Canada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    {% endfor %}
+</div>
+
+
+<div id="add-task-modal" class="modal hidden" style="overflow:hidden">
+
+    <form class="modal-wrapper" action="{% url 'createJob' %}" method = "POST" novalidate>
+        {% csrf_token %}
+        <header>
+            <span style="float:right; padding:20px" onclick="toggleVisibility('add-task-modal')">x</span>
+            <h2 class="modal-title">Create a new job</h2>
+        </header>
+        <div style="padding: 20px;">
+            <div class="add-task-form-section">
+                <label>Task Name</label>
+                <input name="taskName" type="text" class="add-task-form-input"></input>
+            </div>
+            <div class="add-task-form-section">
+                <label>Category</label>
+                <div id="category-text" class="category-select" onclick="toggleVisibility('category-select-modal')">Select a category</div>
+                <input name="category" hidden id = "selected-category">
+            </div>
+            <div class="add-task-form-section">
+                <label>Description</label>
+                <textarea name="description" type="submit" class="add-task-form-input description"></textarea>
+            </div>
+            <div class="add-task-form-section">
+                <label>Due Date</label><br>
+                <input name="dueDate" type="date" class="add-task-form-input">
+                <input hidden name ="latitude" value = '40'>
+                <input hidden name ="longtitude" value = '-70'>
+            </div>
+        </div>
+        <button type ="submit" value="submit" style="background-color:  #2e856e;color:white;">Create</button>
+    </form>
+</div>
+
+<div id="category-select-modal" class="modal hidden">
+    <div class="modal-wrapper">
+        <div class="task-list-wrapper">
+            <div class="task-section-header">
+                <h2 class="arrow" onclick="toggleVisibility('category-select-modal')">
+                    < </h2> <h2 class="title">Categories
+                </h2>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Housekeeping')">Housekeeping</div>
+                </div>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Education')">Education</div>
+                </div>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Technology')">Technology</div>
+                </div>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Animals')">Animals</div>
+                </div>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Repairs')">Repairs</div>
+                </div>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Delivery')">Delivery</div>
+                </div>
+                <div class="task-list-content-item">
+                    <div class="task-list-content-item-name" onclick="selectCategory('Entertainment')">Entertainment</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

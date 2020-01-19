@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="worker-grid-container">
+    <div class="worker-grid-item">  
+        <div ><img class="worker-profile-image" src="{{ profile_image }}"></div >  
+        <a class="worker-name">{{ first_name }}  {{last_name}}</a>
+        <a class="worker-description">{{ description }}</a>
+    </div>
+</div>
+{% endblock %}

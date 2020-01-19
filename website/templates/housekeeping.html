@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% for task in tasks %}  
+    <div class="container">
+        <div id="mapid"></div>
+        <script>initMap(45.505, -73.614)</script>
+        <div class="taskName">
+            {{task.taskName}}
+        </div><br>
+        <div class="description">
+            {{task.description}}
+        </div><br>
+        <div class="dueDate">Due date:
+            {{task.dueDate}}
+        </div><br>
+        <div class="coord">
+            <a href="https://www.google.com/maps/search/?api=1&query={{task.latitude}},{{task.longtitude}}"></a>
+        </div>
+        
+    </div>
+{% endfor %}
+    {% endblock %}

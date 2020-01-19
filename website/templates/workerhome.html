@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+        <!-- <h1>Worker page</h1> -->
+        <div>
+            <h5>Looking for a job ?</h5>
+            <div class="categories">
+                <form onsubmit="search()" >
+                    <input type="text" class="searchbar" placeholder="Search for jobs"><!-- <button type="button">Search</button> -->
+                    <a id="searchref"></a>
+                </form><br>
+                <div id="categories-header">Categories</div>
+                <a href="housekeeping"><div class="categories-list" >Housekeeping</div></a>
+                <a href="education"><div class="categories-list">Education</div></a>
+                <a href="technology"><div class="categories-list">Technology</div></a>
+                <a href="animals"><div class="categories-list">Animals</div></a>
+                <a href="repairs"><div class="categories-list">Repairs</div></a>
+                <a href="delivery"><div class="categories-list">Delivery</div></a>
+                <a href="entertainment"><div class="categories-list">Entertainment</div></a>
+            </div>
+
+        </div>
+
+
+    {% endblock %}

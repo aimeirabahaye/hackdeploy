@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<meta 
+     name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<html>
+    <title>
+        LifeTasks
+    </title>
+    <head>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'workerprofile.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'createjob.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'posterinbox.css' %}" />
+        <script src="{% static 'createjob.js' %}"></script>
+        <script src="{% static 'workerhome.js' %}"></script>
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+        <link rel="stylesheet" href="{% static 'workerhome.css'%}" />
+        <link rel="icon" href="{% static 'favicon.ico' %}"/>
+        <script src="{% static 'main.js' %}"></script>
+    </head>
+  <body>
+    <div class="se-pre-con"></div>
+        <div class="topnav">
+            <a>LifeTasks</a>                        
+        </div>
+
+        <div class="bottomnav">
+            <a href="http://10.200.26.0:8000/create-job/" class="fas fa-home" style="font-size:18px;color:white"></a>
+            <div class="wrapper-env">
+            <a href="http://10.200.26.0:8000/inbox-poster/1" class="fas fa-bell" style="font-size:18px;color:white">
+                <span class="badge">4</span>
+            </a>
+            </div>
+            <a href="{% url 'mePoster' %}" class="fas fa-user" style="font-size:18px;color:white"></i></a>
+
+            
+        </div>
+        
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+  </body>
+</html>
